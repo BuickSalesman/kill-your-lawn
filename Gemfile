@@ -73,3 +73,4 @@ end
 gem "jwt"
 gem "http"
 gem "rack-cors"
+gem "rufus-scheduler"
