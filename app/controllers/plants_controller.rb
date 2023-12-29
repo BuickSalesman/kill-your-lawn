@@ -21,9 +21,9 @@ class PlantsController < ApplicationController
     pp response.parse
     data = response.parse
     watering_general_benchmark = data["watering_general_benchmark"]
-    message = "Give the #{id} #{watering_general_benchmark} liters of water"
+    message = "Give your #{id} liters of water every#{watering_general_benchmark}"
 
-    Rufus::Scheduler.singleton.in("10s", tags: [message]) do
+    Rufus::Scheduler.singleton.in("5s", tags: [message]) do
       puts message
     end
     data = Rufus::Scheduler.singleton.jobs.map do |job|
